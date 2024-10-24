@@ -2,10 +2,10 @@ package Library;
 
 public class ViewBooks implements IOOperation {
 	
+
 	@Override
-	public void oper() {
-		
-		System.out.println("View Books");
+	public void oper(Database database, User user) {
+		// TODO Auto-generated method stub
 		
 	}
 

@@ -47,7 +47,7 @@ public class Main {
     		user = new NormalUser(name, email, phonenumber);
     	}
     	database.AddUser(user);
-    	user.menu();
+    	user.menu( database, user);
     	System.out.println("User created sucessfully");
 	}
 
@@ -61,7 +61,7 @@ public class Main {
     	int n = database.login(phonenumber, email);
     	if( n != -1) {
     		User user = database.getUser(n); 
-    		user.menu();
+    		user.menu( database, user);
     		System.out.println("Welcome" + user.getName());
     	} else {
     		System.out.println("User does't exist");
