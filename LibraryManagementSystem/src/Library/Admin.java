@@ -20,13 +20,20 @@ public class Admin extends User {
 	
 	public Admin(String name, String email, String phonenumber) {
 		super(name, email, phonenumber);
-		this.operations = new IOOperation[] {
-				new AddBook()	
+				this.operations = new IOOperation[] {
+						new ViewBooks(),
+						new AddBook(),	
+						new DeleteBook(),
+						new Search(),
+						new DeleteAllData(),
+						new ViewOrder(),
+						new Exit()
+					
 			};
 	}
 	
 	@Override
-	public void menu() {
+	public void menu(Database database, User user) {
 		System.out.println("1.View books");
 		System.out.println("2.Add books");
 		System.out.println("3.Delete books");
@@ -37,7 +44,8 @@ public class Admin extends User {
 		
 		Scanner s = new Scanner(System.in);
 		int n = s.nextInt();
-		this.operations[n].oper();
+		this.operations[n-1].oper(database, user);
+		s.close();
 	}
 
 }

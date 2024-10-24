@@ -1,7 +1,6 @@
 package Library;
 
-public class ViewOrder implements IOOperation {
-
+public class PlaceOrder implements IOOperation{
 
 
 	@Override
